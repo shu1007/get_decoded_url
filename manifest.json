@@ -2,12 +2,13 @@
   "name": "GetDecodedUrl",
   "author": "Shu NARIGASAWA",
   "description": "ctrl + shift + c で開いているページのURLをデコードしてクリップボードにコピーします。",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
       "js": ["script.js"]
     }
-  ]
+  ],
+  "permissions": ["activeTab"]
 }
