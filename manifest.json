@@ -1,14 +1,21 @@
 {
   "name": "GetDecodedUrl",
-  "author": "Shu NARIGASAWA",
-  "description": "ctrl + alt + c で開いているページのURLをデコードしてクリップボードにコピーします。",
-  "version": "0.0.3",
+  "author": "Imamu",
+  "description": "alt + shift + c で開いているページのURLをデコードしてクリップボードにコピーします。",
+  "version": "0.0.4",
   "manifest_version": 2,
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["script.js"]
+  "permissions": ["activeTab"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "commands": {
+    "copy_decoded_uri": {
+      "suggested_key": {
+        "windows": "Alt+Shift+C",
+        "mac": "Alt+Shift+C"
+      },
+      "description": "Copy URI without encoding"
     }
-  ],
-  "permissions": ["activeTab"]
+  }
 }
